@@ -30,3 +30,7 @@
     background-color: #F8F8F8;
     padding-left: 4px;
 }
+/* error msg css */
+.error-msg{
+    display: none;
+}
