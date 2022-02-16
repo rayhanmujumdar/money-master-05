@@ -58,17 +58,27 @@ savingButton.addEventListener("click",()=>{
     const incomeValue = costInputValue("income-value");
     const PercentageValue = costInputValue("Percentage-input");
     const savingAmount = incomeValue * (PercentageValue / 100);
-    const yourSaving = htmlId("your-saving-amount");
-    yourSaving.innerText = savingAmount;
+    // total balance value;
     const totalBalance = htmlId("total-balance").innerText;
-    if(savingAmount > totalBalance){
-        const errorMsgSaving = htmlId("error-msg-saving");
-        errorMsgSaving.style.display = 'block'
+    const errorMsgSaving = htmlId("error-msg-saving");
+    // condition of error;
+    if(isNaN(PercentageValue)){
+        errorMsgSaving.style.display = "block"
+        errorMsgSaving.innerText = "Type percentage Value"
+    }
+    else if(savingAmount > totalBalance){
+        errorMsgSaving.style.display = 'block';
+        errorMsgSaving.innerText = "Your Saving is over then your Balance!!"
+        // empty all input if any error;
+        empty("income-value","food-cost-input","rent-cost-input","clothes-cost-input","Percentage-input");
     }else{
+        // saving amount output;
+        const yourSaving = htmlId("your-saving-amount");
+        yourSaving.innerText = savingAmount;
         // remaining balance;
         const totalRemainingBalance = totalBalance - savingAmount;
         const remainingBalance = htmlId("remaining-Balance");
         remainingBalance.innerHTML = totalRemainingBalance;
+        errorMsgSaving.style.display = 'none'
     }
-    // console.log(savingAmount)
 })
