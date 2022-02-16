@@ -1,7 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* family cost css */
+.family-cost-img{
+    background-image: url(../img/family-cost.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 600px;
+    height: 700px;
+}
+.all-input-value input{
+    width: 300px;
+    height: 50px;
+    margin-left: 10px;
+    border: none;
+    background-color: #F8F8F8;
+    padding-left: 4px;
+}
+.all-input-value input:focus,
+.saving-amount input:focus{
+    border: 1px solid green;
+    outline: green;
+    border-radius: 4px;
+}
+/* saving amount css*/
+.saving-amount input{
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    border: none;
+    background-color: #F8F8F8;
+    padding-left: 4px;
+    
 }
