@@ -23,11 +23,11 @@ function costCalculation(){
     if(isNaN(incomeValue) || isNaN(foodCost) || isNaN(rentCost) || isNaN(ClothesCost)){
         errorMsg.style.display = "block"
         errorMsg.innerText = "Set the proper value and fill input all cost!!"
+        savingAmountValue("total-cost","total-balance");
     }else{
         // Total expenses
         const totalExpenses = foodCost + rentCost + ClothesCost;
         if(totalExpenses <= incomeValue){
-            // const totalCost = foodCost + rentCost + ClothesCost;
             totalCost.innerHTML = totalExpenses;
             const totalBalance = incomeValue - totalExpenses;
             balanceId.innerText = totalBalance;
@@ -43,6 +43,12 @@ function costCalculation(){
 function empty(){
     for(const empty of arguments){
         htmlId(empty).value = ""
+    }
+}
+//if any error attack,total all value is zero;
+function savingAmountValue(){
+    for(const errorelements of arguments){
+        htmlId(errorelements).innerText = 0;    
     }
 }
 // calculate button click event;
@@ -62,15 +68,19 @@ savingButton.addEventListener("click",()=>{
     const totalBalance = htmlId("total-balance").innerText;
     const errorMsgSaving = htmlId("error-msg-saving");
     // condition of error;
-    if(isNaN(PercentageValue)){
+    if(isNaN(incomeValue)){
+        savingAmountValue("your-saving-amount","remaining-Balance");
+    }
+    else if(isNaN(PercentageValue)){
         errorMsgSaving.style.display = "block"
         errorMsgSaving.innerText = "Type percentage Value"
-    }
-    else if(savingAmount > totalBalance){
+        savingAmountValue("your-saving-amount","remaining-Balance")
+    }else if(savingAmount > totalBalance ){
         errorMsgSaving.style.display = 'block';
         errorMsgSaving.innerText = "Your Saving is over then your Balance!!"
         // empty all input if any error;
         empty("income-value","food-cost-input","rent-cost-input","clothes-cost-input","Percentage-input");
+        savingAmountValue("your-saving-amount","remaining-Balance");
     }else{
         // saving amount output;
         const yourSaving = htmlId("your-saving-amount");
