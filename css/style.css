@@ -1,6 +1,7 @@
 /* add bg */
 .mycost-bg{
     background-color: wheat;
+    border-radius: 10px;
 }
 /* family cost css */
 .family-cost-img{
