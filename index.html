@@ -15,7 +15,7 @@
         <section>
             <div class="family-cost">
                 <div class="container">
-                    <h1 class="text-center my-4">My Family cost</h1>
+                    <h1 class="text-center my-4 text-secondary">My Monthly Income or Cost</h1>
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="family-cost-img">
@@ -37,20 +37,26 @@
                                     <div class="d-flex flex-column align-items-end">
                                         <div class="my-3">
                                             <label for="" class="fs-5">Food: </label>
-                                            <input type="text" placeholder="Food Cost">
+                                            <input id="food-cost-input" type="text" placeholder="Food Cost">
                                         </div>
                                         <div class="my-3">
                                             <label for="" class="fs-5">Rent: </label>
-                                            <input type="text" placeholder="Rent Cost">
+                                            <input id="rent-cost-input" type="text" placeholder="Rent Cost">
                                         </div>
                                         <div class="my-3">
                                             <label for="" class="text-start fs-5">Clothes: </label>
-                                            <input type="text" placeholder="Clothes-Cost">
+                                            <input id="clothes-cost-input" type="text" placeholder="Clothes-Cost">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary fs-5 my-3">Calculate</button>
+                                    <button id="expenses-cal-button" class="btn btn-primary fs-5 my-3">Calculate</button>
                                     <p class="fs-3">Total Expenses: <span class="fw-bold">5000</span></p>
                                     <p class="fs-3">Balance: <span class="fw-bold">4000</span></p>
+                                </div>
+                            </div>
+                            <!-- error messege part-01 -->
+                            <div class="error-msg">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <p class="fs-5 text-danger">This is a wrong Number!</p>
                                 </div>
                             </div>
                             <!-- saving and remaining part-2 -->
@@ -66,7 +72,7 @@
                                     <p class="fs-4">Remaining Balance: <span class="fw-bold">2500</span></p>
                                 </div>
                             </div>
-                            <!-- error messege section -->
+                            <!-- error messege part-2 -->
                             <div class="error-msg">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <p class="fs-5 text-danger">This is a wrong Number!</p>
@@ -78,7 +84,7 @@
             </div>
         </section>
     </header>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- javascript file add -->
     <script src="./js/apps.js"></script>
   </body>
 </html>
